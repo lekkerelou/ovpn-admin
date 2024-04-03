@@ -26,14 +26,14 @@ jobs:
       - name: Push openvpn image to Docker Hub
         uses: docker/build-push-action@v4
         with:
-          tags: flant/ovpn-admin:openvpn-${{ steps.get_version.outputs.VERSION }}
+          tags: lekkerelou/ovpn-admin:openvpn-${{ steps.get_version.outputs.VERSION }}
           platforms: linux/amd64,linux/arm64,linux/arm
           file: Dockerfile.openvpn
           push: true
       - name: Push ovpn-admin image to Docker Hub
         uses: docker/build-push-action@v4
         with:
-          tags: flant/ovpn-admin:${{ steps.get_version.outputs.VERSION }}
+          tags: lekkerelou/ovpn-admin:${{ steps.get_version.outputs.VERSION }}
           platforms: linux/amd64,linux/arm64,linux/arm
           file: Dockerfile
           push: true
